@@ -55,37 +55,105 @@
     color: #212EA0;
 }
 
-/* ----- media query -------- */
+/* For screen widths up to 800px */
+@media (max-width: 800px) {
+    .testimonials {
+      padding: 0 20px;
+      overflow-x: auto;
+    }
+  
+    .testimonials ul {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .testimonials ul li {
+      flex: 0 0 80%;
+      max-width: 80%;
+      scroll-snap-align: start;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .next-btn,
+    .back-btn {
+      padding: 10px;
+      width: 35px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+  
+    .slide {
+      padding: 10px;
+    }
+  
+    .slide img {
+      width: 50px;
+      border: 3px solid #212EA0;
+    }
+  }
+  
+  /* ----- Responsive Carousel for Mobile ----- */
 
-@media (max-width: 800px){
-    .testimonials{
-        padding: 0 40px;
+@media (max-width: 800px) {
+    .testimonials {
+      padding: 0 20px;
+      overflow: hidden;
+      position: relative;
     }
-    .next-btn, .back-btn{
-        padding: 10px;
-        width: 35px;
+  
+    .testimonials ul {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
-    .testimonials ul li{
-        padding: 10px;
+  
+    .testimonials ul li {
+      flex: 0 0 100%;
+      max-width: 100%;
+      scroll-snap-align: start;
+      padding: 10px;
+      box-sizing: border-box;
     }
-    .slide{
-        padding: 10px;
+  
+    .slide {
+      padding: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      background: #fff;
     }
-    .slide img{
-        width: 50px;
-        border: 3px solid #212EA0;
+  
+    .slide img {
+      width: 60px;
+      border: 3px solid #212EA0;
+      border-radius: 50%;
     }
-}
-@media (max-width: 600px){
-    .user-info{
-        display: block;
-        margin-bottom: 10px;
-        font-size: 12px;
+  
+    .next-btn,
+    .back-btn {
+      display: none; /* Optional: hide nav buttons on mobile */
     }
-    .user-info h3{
-        font-size: 16px;
+  
+    .user-info {
+      font-size: 14px;
+      margin-bottom: 8px;
     }
-    .slider p{
-        font-size: 12px;
+  
+    .user-info h3 {
+      font-size: 18px;
     }
-}
+  
+    .slider p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+  
